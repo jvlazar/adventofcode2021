@@ -39,7 +39,7 @@ def getDirections(input):
             aim += direction
         else:
             print("There is no valid direction")
-        print ("The depth is %d, the horizontal is %d, the aim is %d, and the direction is %d" %(depth, horizontal, aim, direction))
+       
     return (depth * horizontal)
         
     
