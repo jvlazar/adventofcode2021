@@ -28,6 +28,6 @@ def main():
     day, number = findDate(day_result)
     part = input("Please insert which part: (1 or 2) ")
     run(day, part)
-  
+
 
 main()
