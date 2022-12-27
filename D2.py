@@ -30,7 +30,7 @@ def getDirections(input):
         if info[0] == "forward":
             horizontal += direction
             # for PART 2
-            if sys.argv[1] == "P2":
+            if part == "2":
                 increase = (aim * direction)
                 depth += increase
         elif info[0] == "up":
@@ -43,22 +43,29 @@ def getDirections(input):
     return (depth * horizontal)
         
     
-  
+# takes the part number from the AoC.py file and sets it
+def setPart(set_part):
+    global part
+    part = set_part
 
+# returns the part
+def getPart():
+    return part
 
 # define the main function
 def main():
     input = []
+    part = getPart()
     # read the input file
     data = open("D2.txt", 'r')
     # gives the data as an array with instructions and coordinates afterwards
     data = toArray(data)
     
 
-    if (sys.argv[1] == "P1"):
+    if (part == "1"):
         print("The multiplied final horizontal and final depth position is %d" %(getDirections(data)))
        
-    elif (sys.argv[1] == "P2"):
+    elif (part == "2"):
         print("The multiplied final horizontal and final depth position is %d" %(getDirections(data)))
        
     else:

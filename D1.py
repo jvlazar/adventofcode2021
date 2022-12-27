@@ -2,6 +2,7 @@
 
 # read the command prompt
 import sys
+
  
 # setup; manipulating the input file to a format that's easy to work with
 # converting all text in the file to an array
@@ -64,23 +65,29 @@ def getCount2(input):
 
     return(count)
 
+# takes the part number from the AoC.py file and sets it
+def setPart(set_part):
+    global part
+    part = set_part
+
+# returns the part
+def getPart():
+    return part
+
 
 # define the main function
 def main():
+    part = getPart()
     input = []
     # read the input file
     data = open("D1.txt", 'r')
     data = toArray(data)
     input = toInt(data, input)
     
-
-    if (sys.argv[1] == "P1"):
-     
+    if (part == "1"):
         print(getCount(input))
-
-    elif (sys.argv[1] == "P2"):
+    elif (part == "2"):
         print("There are %d number of increased 3-set measurements than the previous set" %(getCount2(input)))
-
     else:
         print("There is no valid part number. Clossing program")
         exit()
